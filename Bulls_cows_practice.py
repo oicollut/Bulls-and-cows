@@ -1,22 +1,21 @@
-import re
-from  random import choice                  # Импортируем функцию choice из библиотеки random
-z = '0123456789'                            # Создаём строку z
-x = choice(z[1:10])                         # Создаём строку x из одного случайно выбранного символа из среза строки z (без 0)
-for i in range(3):                          # В цикле из 3-x повторений
-    z = ''.join(j for j in z if j != x[i])  # удаляем из строки z символ который добавили в строку x,
-    x += choice(z)                           # добавляем к строке x случайно выбранные символы из строки z.  
-n = 0                                 
+from  random import choice                  
+s = '0123456789'                                 #create string to choose numbers from (must be 0-9)
+x = choice(s)                                    #make first choice and store in x                 
+for i in range(3):                               #create 4-time loop to run choosing process until we have a 4-number string
+    s = ''.join(j for j in z if j != x[i])       #remove chosen number (equal to x) from s-string to avoid choosing the same one in next interation (nums need to be unique)
+    x += choice(s)                               #add chosen number to x-string
+n = 0                                            #set attempt counter to zero
 while True:
-    y = input("Введите четырёхзначное число: ") # Функция ввода строки
-    b = 0; c = 0                                # Создаём переменные Bulls и Cows
-    n +=1
+    y = input("Введите четырёхзначное число: ")  #ask for user input
+    b = 0; c = 0                                 #define variables for bulls (b) and cows (c) and set counter to zero
+    n +=1                                        #increment attempts by 1
     while True: 
         if len(y) != 4:
           print('Число должно быть четырёхзначным, давайте ещё раз!')
           break
         if y[0] == y[1] or y[0] == y[2] or y[0] == y[3] or y[1] == y[2] or y[1] ==y[3] or y[2] == y[3]:
           print('Цифры в числе не должны повторяться. Попробуйте ещё раз.')
-        break                                        #прибавляем 1 к счетчику ходов   
+        break                                          
     for i in range(4):        
       cow = 'коров' 
       bull = 'бык'                         
