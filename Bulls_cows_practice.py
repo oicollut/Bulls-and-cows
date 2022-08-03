@@ -2,7 +2,7 @@ from  random import choice
 s = '0123456789'                                 #create string to choose numbers from (must be 0-9)
 x = choice(s)                                    #make first choice and store in x                 
 for i in range(3):                               #create 3-time loop to run choosing process until we have a 4-number string
-    s = ''.join(j for j in z if j != x[i])       #remove chosen number (equal to x) from s-string to avoid choosing the same one in next interation (nums need to be unique)
+    s = ''.join(j for j in s if j != x[i])       #remove chosen number (equal to x) from s-string to avoid choosing the same one in next interation (nums need to be unique)
     x += choice(s)                               #add chosen number to x-string
 n = 0                                            #set attempt counter to zero
 while True:                                      #infinite cycle to continue asking for number (breaks when bulls=4, player wins)
@@ -21,12 +21,12 @@ while True:                                      #infinite cycle to continue ask
           b += 1                                 #increment number of bulls
       elif y[i] in x:                            #matching digit in different position is a cow
            c += 1                                #increment number of cows
-     cow = 'коров'                               #create string with cow word 'base'
+     cow = 'коров'                               #create string with cow word 'base' to add ending so that we have correct grammar in cow/bull number message
      bull = 'бык'                                #create string with bull workd 'base'
-      if b==0:                                   
+      if b==0:                                   #if we have zero bulls, rewrite bull variable to "быков" (ноль быков)
          bull = bull + 'ов'
       if b >= 2:
-         bull = bull + 'a'
+         bull = bull + 'a'                       #if we have 2, 3 or 4 bulls, rewrite bull variable to "быка" (два быка, три быка, четыре быка)
       if c==1:
          cow = cow + 'a'
       if c > 1:
