@@ -16,21 +16,21 @@ while True:
         if y[0] == y[1] or y[0] == y[2] or y[0] == y[3] or y[1] == y[2] or y[1] ==y[3] or y[2] == y[3]:
           print('Цифры в числе не должны повторяться. Попробуйте ещё раз.')
         break                                          
-    for i in range(4):        
-      cow = 'коров' 
-      bull = 'бык'                         
+    for i in range(4):                                 
       if x[i] == y[i]:                        
           b += 1                              
       elif y[i] in x:                        
-           c += 1 
+           c += 1
+     cow = 'коров' 
+     bull = 'бык'
       if b==0:
-          bull = bull + 'ов'
+         bull = bull + 'ов'
       if b >= 2:
-           bull = bull + 'a'
+         bull = bull + 'a'
       if c==1:
-        cow = cow + 'a'
+         cow = cow + 'a'
       if c > 1:
-          cow = cow + 'ы'
+         cow = cow + 'ы'
     print('В числе ' + y + ' ' + str(b) + ' ' + bull +  ' ' + str(c) +  ' ' + cow)
     if b==4:
           if n == 0:
