@@ -21,16 +21,16 @@ while True:                                      #infinite cycle to continue ask
           b += 1                                 #increment number of bulls
       elif y[i] in x:                            #matching digit in different position is a cow
            c += 1                                #increment number of cows
-     cow = 'коров'                               #create string with cow word 'base' to add ending so that we have correct grammar in cow/bull number message
-     bull = 'бык'                                #create string with bull workd 'base'
-     if b==0:                                    #if we have zero bulls, rewrite bull variable to "быков" (ноль быков)
-         bull = bull + 'ов'
-     if b >= 2:
-         bull = bull + 'a'                       #if we have 2, 3 or 4 bulls, rewrite bull variable to "быка" (два быка, три быка, четыре быка)
-     if c==1:
-         cow = cow + 'a'
-     if c > 1:
-         cow = cow + 'ы'
+    cow = 'коров'                               #create string with cow word 'base' to add ending so that we have correct grammar in cow/bull number message
+    bull = 'бык'                                #create string with bull workd 'base'
+    if b==0:                                    #if we have zero bulls, rewrite bull variable to "быков" (ноль быков)
+        bull = bull + 'ов'
+    if b >= 2:
+        bull = bull + 'a'                       #if we have 2, 3 or 4 bulls, rewrite bull variable to "быка" (два быка, три быка, четыре быка)
+    if c==1:
+        cow = cow + 'a'
+    if c > 1:
+        cow = cow + 'ы'
     print('В числе ' + y + ' ' + str(b) + ' ' + bull +  ' ' + str(c) +  ' ' + cow)
     if b==4:
           if n == 0:
